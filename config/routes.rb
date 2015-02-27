@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   
   # Home
@@ -13,15 +12,9 @@ Rails.application.routes.draw do
   get "/add_from_bookmark", to: "images#add_from_bookmark"
   get "/tags/:tag",         to: "images#index",             as: 'tag'
   
-  
-  get "tools", :to => "statics#tools", :as => :tools
-  get "invalid_image", :to => "statics#invalid_image", :as => :invalid_image
-  
-  get "drp", :to =>"statics#drp"
-  
-  
-  #get "images/delete/:id", :as => :image_delete, :to => "images#delete"
-  
-  resources :users
+  # Bookmarklet
+  get "drp",            to: "statics#drp"
+  get "tools",          to: "statics#tools",          as: 'tools'
+  get "invalid_image",  to: "statics#invalid_image",  as: 'invalid_image'
   
 end

@@ -1,14 +1,9 @@
 class StaticsController < ApplicationController
-  def about
-  end
-
-  def help
-  end
-
-  def contact
-  end
+  
+  skip_before_filter :verify_authenticity_token, if: :drp
   
   def tools
+    
   end
 
   def invalid_image

@@ -1,22 +1,13 @@
 class ImagesController < ApplicationController
 
- # before_filter :user_required
- # def user_required
- #     unless current_user
- #     flash[:notice] = "You must be logged in to access this page"
- #     redirect_to new_user_session_url
- #     return false
- #     end
- # end
+  def show
+  end
 
- def show
- end
-
- def new
+  def new
     @image = current_user.images.new
- end
+  end
 
- def create
+  def create
     @image = current_user.images.new(image_params)
     @image.short_url = Image.generate_short_url(@image.url)
 
@@ -68,22 +59,12 @@ class ImagesController < ApplicationController
   end
 
   def add_from_bookmark
-    @img_url = params[:img]
-    if valid_image(@img_url) 
-      @image = Image.new
-      @image.url = @img_url 
+    img_url = params[:img]
+    if [".gif", ".jpg", ".png"].include? File.extname(params[:img]).downcase
+      @image = Image.new( { url: params[:img] } )
       render :action => :new
     else
       redirect_to invalid_image_url
-    end
-  end
-
-  #methods
-  def valid_image(url)
-    if [".gif", ".jpg", ".png"].include? File.extname(url).downcase 
-      return true
-    else
-      return false
     end
   end
   
