@@ -18,6 +18,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'bitly'
+gem 'zeroclipboard-rails'
 
 
 group :development do

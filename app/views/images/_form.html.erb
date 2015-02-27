@@ -1,35 +1,41 @@
 <%= form_for(@image) do |f| %>
-  <% if @image.errors.any? %>
-    <div id="errorExplanation">
-    <h2><%= pluralize(@image.errors.count, "error") %> prohibited
-    this image from being saved:</h2>
-    <ul>
-    <% @image.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-    </ul>
-    </div>
+
+    <% if @image.errors.any? %>
+        <div id="errorExplanation">
+            <h2>
+                <%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+                <ul>
+                    <% @image.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+        </div>
     <% end %>
 
     <div class="field">
         <%= f.label :name %><br />
         <%= f.text_field :name %>
     </div>
+    
     <div class="field">
         <%= f.label :url %><br />
         <%= f.text_field :url %>
     </div>
+    
     <div class="field">
         <%= f.label :tag_list, "Tags (separated by commas)" %><br />
         <%= f.text_field :tag_list %>
     </div>
+    
     <div class="field">
         <%= f.label :short_url, "Short URL" %><br />
         <%= f.text_field :short_url , :disabled => true%>
     </div>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.hidden_field :short_url, :value => @image.short_url %>
+      
+    <%= f.hidden_field :short_url, :value => @image.short_url %>
+    
     <div class="actions">
-    <%= f.submit %>
+        <%= f.submit %>
     </div>
+    
 <% end %>

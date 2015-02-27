@@ -1,0 +1,134 @@
+.wr {
+    max-width: 1186px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+}
+
+/*
+ *
+ * Grids - 1/3 and 2/3
+ *
+ */
+.two-thirds,
+.one-third {
+    float: left;
+}
+.two-thirds {
+    width: 64%;
+}
+.one-third {
+    width: 36%;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    width:100%;
+    height:100%;
+    top: 0;
+    background:#000;
+    @include opacity(0.75);
+}
+
+.blue-wrapper {
+    background: #1ea1db;
+    padding: 50px 0;
+    .wr {
+        background: #fff;
+        position: relative;
+        padding: 40px;
+        max-width: 950px;
+    }
+}
+
+.message {
+	background: $grey_20;
+	padding-bottom: 30px;
+    &.white {
+        background: none;
+        padding-top: 30px;
+    }
+	.inner {
+		margin: 0 68px;
+		background: $grey_80;
+		padding: 43px 30px 43px 120px;
+		color: #fff;
+		position: relative;
+		height: 146px;
+		span {
+			font-size: 60px;
+			height: 60px;
+			width: 60px;
+			position: absolute;
+			left: 30px;
+			top: 43px;
+		}
+		p {
+			margin: 4px 280px 0 0;
+			font-size: 18px;
+		}
+		
+		.actions {
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			width: 260px;
+			
+			.button {
+				font-size: 14px;
+				border: 1px solid #fff;
+				background: $grey_80;
+				padding: 12px 20px 11px;
+				margin: 0 0 5px 0;
+				text-align: center;
+				width: 100%;
+				&.approve {
+					background: #fff;
+					color: $grey_80;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+    background: $site_blue;
+    color: #fff;
+    width: 100%;
+    min-height: 360px;
+    
+    .footer-body {
+        padding: 80px;
+        .footer-cell {
+            float: left;
+            vertical-align: top;
+            width: 195px;
+            &.large {
+                width: 400px;
+            }
+            img {
+                width: 150px;
+                margin-bottom: 5px;
+            }
+            .heading {
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            p {
+                width: 300px;
+                margin-top: 10px;
+            }
+            a {
+                display: block;
+                color: white;
+            }
+            .copyright {
+                font-size: 14px;
+                margin-top: 40px;
+            }
+        }    
+    }
+}

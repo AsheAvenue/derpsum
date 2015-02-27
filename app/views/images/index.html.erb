@@ -1,33 +1,33 @@
-<% @images.each_slice(3) do |slice| %>
-<div class="row">
-    <% slice.each do |image| %>
-    <div class="large-4 columns">
-    <div class="panel">
-    <p>
-        <%= image_tag(image.img_url, :alt => :name) %>
-    </p>
-    <p>
-        <%= image.name %>
-    </p>
+<div class="images">
 
-    <span class="taglist">Tags: <%= tag_url_list(image) %></span>
-    <% if current_user %>
-    <hr/>
-    <span class="edit_image">
-        <%= link_to 'View', image.img_url, :target=>"_blank" %> 
-        <%= link_to 'Edit', edit_image_path(image) %>
-        <% if current_user.id = image.user_id %>
-            <%= link_to 'Delete', image_path(image), method: :delete, :confirm => "You sure?"  %>
-        <% end %>
-    </span>
-    <span class="url-field"><%= text_field_tag image.id, image.img_url, :readonly => true, :class => "shorturl-text" %> Short URL</span>
+    <% @images.each do |image| %>
+            
+            <div class="image">
+                <div class="main-image">
+                    <%= image_tag(image.img_url, alt: image.name, data: { url: image.img_url } ) %>
+                </div>
+                <div class="overlay">
+                    <h3><%= image.name %></h3>
+                    <span class="taglist">Tags: <%= tag_url_list(image) %></span>
+            
+                    <hr >
+            
+                    <span class="edit_image">
+                        <%= link_to 'View', image.img_url, :target=>"_blank" %> 
+                        <% if image.user === current_user %>
+                            <%= link_to 'Edit', edit_image_path(image) %>
+                            <%= link_to 'Delete', image_path(image), method: :delete, :confirm => "You sure?"  %>
+                        <% end %>
+                    </span>
+                </div>
+                
+            </div>
+                
     <% end %>
-    </div>
-    </div>
-    <% end %>
+    
 </div>
-<% end %>
+
 <div class="row pages">
-<%= paginate @images %>
+    <%= paginate @images %>
 </div>
 

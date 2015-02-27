@@ -1,0 +1,162 @@
+@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+    @if $opacity == 1 {
+        filter: unquote("progid:DXImageTransform.Microsoft.Alpha(enabled=false)");
+    }
+    @else {
+        filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+    }
+    opacity: $opacity;
+}
+
+@mixin sprite-bg($name) {
+    background-image: sprite-url($sprites);
+    background-position: sprite-position($sprites, $name);
+    background-repeat: no-repeat;
+    display: block;
+    height: image-height(sprite-file($sprites, $name));
+    text-indent: -9999em;
+    width: image-width(sprite-file($sprites, $name));
+}
+
+@mixin retina-sprite-bg($name) {
+    background-image: sprite-url($retina_sprites);
+    background-position: sprite-position($retina_sprites, $name);
+    background-repeat: no-repeat;
+    background-size: image-width(sprite-path($retina_sprites)) / 2;
+    display: block;
+    height: image-height(sprite-file($retina_sprites, $name)) / 2;
+    text-indent: -9999em;
+    width: image-width(sprite-file($retina_sprites, $name)) / 2;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+            transform: $transform;
+}
+
+@mixin transform-style($transform-style...) {
+    -webkit-transform-style: $transform-style;
+       -moz-transform-style: $transform-style;
+            transform-style: $transform-style;
+}
+
+@mixin backface-visibility($backface-visibility) {
+    -webkit-backface-visibility: $backface-visibility;
+       -moz-backface-visibility: $backface-visibility;
+            backface-visibility: $backface-visibility;
+}
+
+@mixin transition($transitions...) {
+    -webkit-transition: $transitions;
+       -moz-transition: $transitions;
+            transition: $transitions;
+}
+
+@mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+       -moz-box-shadow: $shadows;
+            box-shadow: $shadows;
+}
+
+@mixin perspective($perspective) {
+    -webkit-perspective: $perspective;
+       -moz-perspective: $perspective;
+            perspective: $perspective;
+}
+
+@mixin font-face($family, $style, $weight, $filename) {
+    @font-face {
+        font-family: $family;
+        font-style:  $style;
+        font-weight: $weight;
+        src: url('../../font/' + $filename + '.eot');
+        src: url('../../font/' + $filename + '.eot?#iefix') format('embedded-opentype'),
+             url('../../font/' + $filename + '.woff') format('woff'),
+             url('../../font/' + $filename + '.ttf') format('truetype'),
+             url('../../font/' + $filename + '.svg#' + $family +'') format('svg');
+    }
+}
+
+@mixin user-select($select) {
+    -webkit-user-select: $select;
+    -moz-user-select: $select;
+    -ms-user-select: $select;
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin linearGradient($top, $bottom) {
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+}
+
+@mixin textOutline($textColor, $outlineColor, $outlineWidth) {
+    -webkit-text-fill-color: $textColor;
+    -webkit-text-stroke-width: $outlineWidth;
+    -webkit-text-stroke-color: $outlineColor;
+    color: $textColor;
+    text-shadow:
+      -1px -1px 0 $outlineColor,
+       1px -1px 0 $outlineColor,
+       -1px 1px 0 $outlineColor,
+        1px 1px 0 $outlineColor;
+}
+@mixin css-triangle($direction: "down", $size: 20px, $color: #000) {
+    width: 0;
+    height: 0;
+    border-left: $size solid #{setTriangleColor($direction, "left", $color)};
+    border-right: $size solid #{setTriangleColor($direction, "right", $color)};
+    border-bottom: $size solid #{setTriangleColor($direction, "bottom", $color)};
+    border-top: $size solid #{setTriangleColor($direction, "top", $color)};
+}
+
+@function setTriangleColor($direction, $side, $color) {
+    @if $direction == "left" and $side == "right"
+    or  $direction == "right" and $side == "left"
+    or $direction == "down" and $side == "top"
+    or $direction == "up" and $side == "bottom" {
+        @return $color
+    } @else {
+        @return "transparent";
+    }
+}
+
+@mixin icon($content) {
+	font-family: "sdp" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	&:before {
+		content: $content;
+	}
+}
