@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/tags/:tag",         to: "images#index",             as: 'tag'
   
   # Bookmarklet
-  get "drp",            to: "statics#drp"
+  get "bookmarklet",    to: "statics#bookmarklet"
   get "tools",          to: "statics#tools",          as: 'tools'
   get "invalid_image",  to: "statics#invalid_image",  as: 'invalid_image'
   

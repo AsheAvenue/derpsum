@@ -1,0 +1,3 @@
+var img = location.href;
+console.log("Attempting to add image: " + img);
+window.location = "http://<%= get_bookmarklet_url %>/add_from_bookmark/?img="+img;
