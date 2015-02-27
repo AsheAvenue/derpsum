@@ -1,0 +1,40 @@
+<nav class="top-bar">
+    <ul class="title-area">
+        <li class="name">
+            <h1>
+                <a href="/">Lorem Derpsum</a>
+            </h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu</span></a>
+        </li>
+    </ul>
+
+    <section class="top-bar-section">
+        <ul class="left">
+            <li class="divider"></li>
+            
+            <% if current_user %>
+                <li class="has-dropdown">
+                    <%= link_to "Images", images_url, :class => "active" %>
+                    <ul class="dropdown">
+                        <li><%= link_to "Add New Image",new_image_url %></li>
+                        <li><%= link_to "My Images", my_url %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "See all >", images_url %></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li><%= link_to "Tools", tools_url %></li>
+            <% end %>
+        </ul>
+
+        <ul class="right">
+            <% if current_user %>
+                <li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+                <li><%= link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2) %></li>
+            <% end %>
+        </ul>
+    </section>
+</nav>

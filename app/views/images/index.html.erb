@@ -1,0 +1,33 @@
+<% @images.each_slice(3) do |slice| %>
+<div class="row">
+    <% slice.each do |image| %>
+    <div class="large-4 columns">
+    <div class="panel">
+    <p>
+        <%= image_tag(image.img_url, :alt => :name) %>
+    </p>
+    <p>
+        <%= image.name %>
+    </p>
+
+    <span class="taglist">Tags: <%= tag_url_list(image) %></span>
+    <% if current_user %>
+    <hr/>
+    <span class="edit_image">
+        <%= link_to 'View', image.img_url, :target=>"_blank" %> 
+        <%= link_to 'Edit', edit_image_path(image) %>
+        <% if current_user.id = image.user_id %>
+            <%= link_to 'Delete', image_path(image), method: :delete, :confirm => "You sure?"  %>
+        <% end %>
+    </span>
+    <span class="url-field"><%= text_field_tag image.id, image.img_url, :readonly => true, :class => "shorturl-text" %> Short URL</span>
+    <% end %>
+    </div>
+    </div>
+    <% end %>
+</div>
+<% end %>
+<div class="row pages">
+<%= paginate @images %>
+</div>
+
