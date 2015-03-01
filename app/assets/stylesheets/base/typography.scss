@@ -4,31 +4,31 @@
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/proximanova-regular.eot');
-    src: url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/proximanova-regular.woff') format('woff'),
-         url('../fonts/proximanova-regular.ttf') format('truetype'),
-         url('../fonts/proximanova-regular.svg#ProximaNovaRegular') format('svg');
+    src: font-url('proximanova-regular.eot');
+    src: font-url('proximanova-regular.eot?#iefix') format('embedded-opentype'),
+         font-url('proximanova-regular.woff') format('woff'),
+         font-url('proximanova-regular.ttf') format('truetype'),
+         font-url('proximanova-regular.svg#ProximaNovaRegular') format('svg');
 }
 @font-face {
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 100;
-    src: url('../fonts/proximanova-thin.eot');
-    src: url('../fonts/proximanova-thin.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/proximanova-thin.woff') format('woff'),
-         url('../fonts/proximanova-thin.ttf') format('truetype'),
-         url('../fonts/proximanova-thin.svg#ProximaNovaLight') format('svg');
+    src: font-url('proximanova-thin.eot');
+    src: font-url('proximanova-thin.eot?#iefix') format('embedded-opentype'),
+         font-url('proximanova-thin.woff') format('woff'),
+         font-url('proximanova-thin.ttf') format('truetype'),
+         font-url('proximanova-thin.svg#ProximaNovaLight') format('svg');
 }
 @font-face {
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 600;
-    src: url('../fonts/proximanova-semibold.eot');
-    src: url('../fonts/proximanova-semibold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/proximanova-semibold.woff') format('woff'),
-         url('../fonts/proximanova-semibold.ttf') format('truetype'),
-         url('../fonts/proximanova-semibold.svg#ProximaNovaSemibold') format('svg');
+    src: font-url('proximanova-semibold.eot');
+    src: font-url('proximanova-semibold.eot?#iefix') format('embedded-opentype'),
+         font-url('proximanova-semibold.woff') format('woff'),
+         font-url('proximanova-semibold.ttf') format('truetype'),
+         font-url('proximanova-semibold.svg#ProximaNovaSemibold') format('svg');
 }
 
 /* Basics */

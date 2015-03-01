@@ -11,6 +11,7 @@
         <div class="pull-right">
             <div class="header-buttons">
                 <% if current_user %>
+                    <a class="btn bookmarklet">Bookmarklet</a>
                     <%= link_to "All Gifs", home_url, class: 'btn' %>
                     <%= link_to "My Gifs", my_url, class: 'btn' %>
                     <%= link_to "+", new_image_url, class: 'btn big' %>

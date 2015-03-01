@@ -4,6 +4,7 @@ var derpsum = new function() {
 
     this.init = function() {
         self.masonry();
+        self.bookmarklet();
     };
     
     this.masonry = function() {
@@ -13,6 +14,12 @@ var derpsum = new function() {
             itemSelector: '.image',
             animationEngine: 'best-available',
             layoutMode: 'masonry'
+        });
+    };
+    
+    this.bookmarklet = function() {
+        $('.header-buttons .bookmarklet, .derp-it .x').on('click', function() {
+            $('.derp-it').slideToggle();
         });
     };
     
