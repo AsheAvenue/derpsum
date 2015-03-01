@@ -1,3 +1,11 @@
-<div>
-    <%= link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2), class: 'button' %>
+<div class="home">
+    <div class="logo">
+        <%= image_tag "logo.png" %>
+    </div>
+    <div class="logotype">
+        <%= image_tag "logotype.png" %>
+    </div>
+    <div class="sign-in">
+        <%= link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2), class: 'btn' %>
+    </div>
 </div>

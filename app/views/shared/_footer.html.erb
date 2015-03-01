@@ -1,17 +1,11 @@
-<footer>
-    <div>
-        <div class="row">
-            <div class="large-6 columns">
-                <p>&copy;2015 Ashe Avenue</p>
-            </div>
-            <div class="large-6 columns">
-                <ul class="inline-list right">
-                    <li><a href="http://www.asheavenue.com" target="_blank">Ashe Avenue</a></li>
-                    <li><a href="http://facebook.com/asheavenue">Facebook</a></li>
-                    <li><a href="http://twitter.com/asheavenue">Twitter</a></li>
-                    <li><a href="http://github.com/asheavenue">GitHub</a></li>
-                </ul>
+<div class="footer">
+    <div class="container-fluid">
+        <div class="pull-right">
+            <div class="footer-buttons">
+                <% if current_user %>
+                    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn' %>
+                <% end %>
             </div>
         </div>
     </div>
-</footer>
+</div>

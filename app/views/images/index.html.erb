@@ -1,3 +1,18 @@
+<div class="search">
+    <%= form_tag do |f| %>
+        <div class="find">
+            Find a Gif:
+        </div> 
+        <div class="search-string">
+            <%= text_field_tag :search_string %>
+        </div>
+        <div class="submit">
+            <%= submit_tag 'Search' %>
+        </div>
+    <% end %>
+    
+</div>
+
 <div class="images">
 
     <% @images.each do |image| %>

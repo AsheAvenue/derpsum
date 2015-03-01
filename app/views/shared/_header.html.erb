@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="container-fluid">
+        <div class="pull-left">
+            <div class="header-logo">
+                <a href="/">
+                    <%= image_tag "logo.png", class: 'logo' %>
+                    <%= image_tag "logotype.png", class: 'logotype' %>
+                </a>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div class="header-buttons">
+                <% if current_user %>
+                    <%= link_to "All Gifs", home_url, class: 'btn' %>
+                    <%= link_to "My Gifs", my_url, class: 'btn' %>
+                    <%= link_to "+", new_image_url, class: 'btn big' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
