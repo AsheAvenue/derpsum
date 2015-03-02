@@ -1,0 +1,35 @@
+.derp-it {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: white;
+    height: 200px;
+    padding: 20px;
+    
+    span.x {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: #cc007b;
+        font-size: 36px;
+        cursor: pointer;
+    }
+    
+    h3 {
+        font-size: 24px;
+        color: #cc007b;
+        text-transform: uppercase;
+    }
+    
+    p {
+        line-height: 20px;
+    }
+    
+    .btn {
+        background: #cc007b;
+        color: #fff;
+    }
+}

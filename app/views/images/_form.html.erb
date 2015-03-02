@@ -12,30 +12,38 @@
         </div>
     <% end %>
 
-    <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
+    <% unless @image.new_record? %>
+        <%= image_tag @image.url %>
+    <% end %>
+    
+    <div class="form-row">
+        <div class="name">Name:</div>
+        <div class="field"><%= f.text_field :name %></div>
     </div>
     
-    <div class="field">
-        <%= f.label :url %><br />
-        <%= f.text_field :url %>
+    <div class="form-row">
+        <div class="name">URL:</div>
+        <div class="field"><%= f.text_field :url %></div>
     </div>
     
-    <div class="field">
-        <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-        <%= f.text_field :tag_list %>
+    <div class="form-row">
+        <div class="name">Tags (separated by commas):</div>
+        <div class="field"><%= f.text_field :tag_list %></div>
     </div>
     
-    <div class="field">
-        <%= f.label :short_url, "Short URL" %><br />
-        <%= f.text_field :short_url , :disabled => true%>
-    </div>
-      
-    <%= f.hidden_field :short_url, :value => @image.short_url %>
+    <% unless @image.new_record? %>
+        <div class="form-row">
+            <div class="name">Short URL: <span class="read-only"><%= @image.short_url %></span></div>
+        </div>
+    <% end %>
     
-    <div class="actions">
-        <%= f.submit %>
+    <div class="form-buttons">
+        <% if params[:action] == 'new' %>
+            <%= f.submit 'Add gif', class: 'btn wide' %>
+        <% else %>
+            <%= f.submit 'Save gif', class: 'btn wide' %>
+        <% end %>
+        <%= link_to 'Cancel', home_path, class: 'btn inverse' %>
     </div>
     
 <% end %>

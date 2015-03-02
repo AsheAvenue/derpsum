@@ -39,38 +39,52 @@
     }    
 }
 
-.derp-it {
-    position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    background: white;
-    height: 200px;
-    padding: 20px;
-    
-    span.x {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: #cc007b;
-        font-size: 36px;
-        cursor: pointer;
-    }
+.add,
+.edit {
+    margin: 120px auto;
+    width: 1000px;
     
     h3 {
-        font-size: 24px;
-        color: #cc007b;
+        font-weight: 800;
+        font-size: 36px;
+        color: white;
         text-transform: uppercase;
     }
     
-    p {
-        line-height: 20px;
+    .form-row {
+        width: 100%;
+        margin-top: 30px;
+        
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            
+            span.read-only {
+                text-transform: none;
+            }
+            
+        }
+        
+        .field {
+            width: 100%;
+            
+            input[type=text] {
+                background: transparent;
+                border-bottom: 2px solid white;
+                width: 100%;
+                font-size: 24px;
+                color: white;
+                font-weight: bold;
+                padding-bottom: 7px;
+            }
+            
+        }
+        
     }
     
-    .btn {
-        background: #cc007b;
-        color: #fff;
+    .form-buttons {
+        margin-top: 30px;
     }
 }

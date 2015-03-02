@@ -41,15 +41,3 @@
     <% end %>
     
 </div>
-
-<div class="derp-it">
-    <span class="x"><%= icon('times-circle') %></span>
-    <h3>Get the Derp It! Bookmarklet</h3>
-    <p>
-        Drag this link into your bookmarks bar.  When you have an image that you'd like to 
-        <br>
-        save in your browser, simply click the link to create a new entry in Derpsum.
-    </p> 
-    <a class="btn" onclick="javascript:alert('drag to browser to set up');" href="javascript:void((function(d)%7Bvar e%3Dd.createElement(%27script%27)%3Be.setAttribute(%27type%27,%27text/javascript%27)%3Be.setAttribute(%27charset%27,%27UTF-8%27)%3Be.setAttribute(%27src%27,%27//<%= get_bookmarklet_url %>/bookmarklet.js%3Fr%3D%27%2BMath.random()*99999999)%3Bd.body.appendChild(e)%7D)(document))%3B
-    ">DERP IT!</a>
-</div>

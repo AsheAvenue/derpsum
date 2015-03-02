@@ -20,4 +20,11 @@ input[type=submit] {
         padding: 4px 5px 0px 5px;
         width: 40px;
     }
+    &.inverse {
+        background: #cc007b;
+        color: white;
+    }
+    &.wide {
+        min-width: 200px;
+    }
 }
