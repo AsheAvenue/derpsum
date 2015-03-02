@@ -19,6 +19,7 @@ var derpsum = new function() {
     
     this.bookmarklet = function() {
         $('.header-buttons .bookmarklet, .derp-it .x').on('click', function() {
+            $('#overlay').toggle();
             $('.derp-it').slideToggle();
         });
     };
