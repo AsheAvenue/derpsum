@@ -23,17 +23,14 @@
                 </div>
                 <div class="overlay">
                     <h3><%= image.name %></h3>
-                    <span class="taglist">Tags: <%= tag_url_list(image) %></span>
-            
-                    <hr >
-            
-                    <span class="edit_image">
+                    <div class="taglist">Tags: <%= tag_url_list(image) %></div>
+                    <div class="buttons">
                         <%= link_to 'View', image.img_url, :target=>"_blank" %> 
                         <% if image.user === current_user %>
                             <%= link_to 'Edit', edit_image_path(image) %>
                             <%= link_to 'Delete', image_path(image), method: :delete, :confirm => "You sure?"  %>
                         <% end %>
-                    </span>
+                    </div>
                 </div>
                 
             </div>

@@ -13,14 +13,14 @@
         position: absolute;
         right: 15px;
         top: 15px;
-        color: #cc007b;
+        color: $pink;
         font-size: 36px;
         cursor: pointer;
     }
     
     h3 {
         font-size: 24px;
-        color: #cc007b;
+        color: $pink;
         text-transform: uppercase;
     }
     
@@ -29,7 +29,7 @@
     }
     
     .btn {
-        background: #cc007b;
+        background: $pink;
         color: #fff;
     }
 }

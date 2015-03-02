@@ -2,7 +2,7 @@
 input[type=submit] {
     border-radius: 2px;
     background-color: #fff;
-    color: #cc007b;
+    color: $pink;
     border: 0;
     font-size: 17px;
     font-weight: 600;
@@ -11,7 +11,7 @@ input[type=submit] {
     
     &:hover {
         background-color: darken(#ecf0f1, 2%);
-        color: #cc007b;
+        color: $pink;
     }
     &.big {
         font-weight: bold;
@@ -21,7 +21,7 @@ input[type=submit] {
         width: 40px;
     }
     &.inverse {
-        background: #cc007b;
+        background: $pink;
         color: white;
     }
     &.wide {

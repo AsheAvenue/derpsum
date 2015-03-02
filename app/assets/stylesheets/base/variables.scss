@@ -1,30 +1,3 @@
-$speed:                         .2s;
-$ease:                          ease-in-out;
-                                
-$green:                         #99cb54;
-$light_green:                   #d2e6b7;
-                                
-$red:                           #f05b4a;
-$light_red:                     #f5aca4;
-                                
-$blue:                          #5fc2c2;
-$light_blue:                    #c4e9e9;
-$dark_blue:     		        #499ead;
-                                
-$site_blue:                     #1EA1DB;
-$light_site_blue:               #96D2EE;
-                                
-$grey_100:                      #606060;
-$grey_80:                       #8c8e8d;
-$grey_60:                       #b4b3b3;
-$grey_40:                       #e0e0e0;
-$grey_20:                       #f0f0f0;
-$grey_10:                       #f8f8f8;
-                                
-$phases:                        brainstorm bake build;
-$phase-colors:                  $green $blue $red;
-$phase-light-colors:            $light_green $light_blue $light_red;
-                                
-$phases-and-site:               brainstorm bake build site;
-$phase-and-site-colors:         $green $blue $red $site_blue;
-$phase-and-site-light-colors:   $light_green $light_blue $light_red $light_site_blue;
+$speed: .2s;
+$ease:  ease-in-out;
+$pink:  #cc007b;

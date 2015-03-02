@@ -5,7 +5,6 @@
     margin-bottom: 56px;
     
     .image {
-        
         cursor: pointer;
         width: 25%;
         
@@ -30,6 +29,32 @@
             h3 {
                 font-size: 24px;
                 line-height: 1;
+                color: $pink;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            
+            .taglist {
+                color: #888;
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                a { color: $pink; }
+            }
+            
+            .buttons {
+                a {
+                    border-radius: 2px;
+                    background: $pink;
+                    color: #fff;
+                    padding: 10px 12px 6px 12px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    &:hover {
+                        background: lighten($pink, 10%);
+                    }
+                }
             }
         }
         
