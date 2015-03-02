@@ -18,19 +18,33 @@
     <% @images.each do |image| %>
             
             <div class="image">
+                
                 <div class="main-image">
                     <%= image_tag(image.img_url, alt: image.name, data: { url: image.img_url } ) %>
                 </div>
+                
                 <div class="overlay">
-                    <h3><%= image.name %></h3>
-                    <div class="taglist">Tags: <%= tag_url_list(image) %></div>
-                    <div class="buttons">
-                        <%= link_to 'View', image.img_url, :target=>"_blank" %> 
-                        <% if image.user === current_user %>
+                    <h3>
+                        <%= link_to image.name, image.img_url, :target=>"_blank" %>
+                    </h3>
+                    
+                    <div class="taglist">
+                        Tags: 
+                        <%= tag_url_list(image) %>
+                    </div>
+                    
+                    <div class="share" data-url="<%= image.short_url %>">
+                        Share: 
+                        <span class="link"><%= image.short_url %></span>
+                        <span class="share-button"><i class="fa fa-clipboard"></i></span>
+                    </div>
+                    
+                    <% if image.user === current_user %>
+                        <div class="buttons">
                             <%= link_to 'Edit', edit_image_path(image) %>
                             <%= link_to 'Delete', image_path(image), method: :delete, :confirm => "You sure?"  %>
-                        <% end %>
-                    </div>
+                        </div>
+                    <% end %>
                 </div>
                 
             </div>

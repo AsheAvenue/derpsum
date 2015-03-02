@@ -18,7 +18,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'bitly'
-gem 'zeroclipboard-rails'
 gem 'font-awesome-sass', '~> 4.3.0'
 
 group :development do

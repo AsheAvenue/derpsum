@@ -32,17 +32,49 @@
                 color: $pink;
                 text-transform: uppercase;
                 margin-bottom: 10px;
+                a { 
+                    color: $pink; 
+                    &:hover {
+                        color: lighten($pink, 10%);
+                    }
+                }
             }
             
             .taglist {
                 color: #888;
                 font-size: 12px;
                 text-transform: uppercase;
-                margin-bottom: 20px;
-                a { color: $pink; }
+                margin-bottom: 10px;
+                line-height: 16px;
+                a { 
+                    color: $pink; 
+                    &:hover {
+                        color: lighten($pink, 10%);
+                    }
+                }
+            }
+            
+            .share {
+                margin-bottom: 0;
+                color: #888;
+                font-size: 12px;
+                text-transform: uppercase;
+                line-height: 16px;
+                span.link { 
+                    color: $pink;
+                    text-transform: none;
+                }
+                .share-button {
+                    i {
+                        &.green {
+                            color: #2ecc71;
+                        }
+                    }
+                }
             }
             
             .buttons {
+                margin-top: 20px;
                 a {
                     border-radius: 2px;
                     background: $pink;
