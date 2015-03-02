@@ -26,9 +26,23 @@ class ImagesController < ApplicationController
   end
 
   def update
-    @image = current_user.images.find(params[:id]) 
+    @image = current_user.images.find(params[:id])
+    
+    # Determine if the url has changed
+    if params[:image][:url] != @image.url
+      changed = true
+    end
+    
+    # Update the image
     if @image.update(image_params)
       flash[:notice] = "image updated!"
+      
+      # Re-generate the short URL if it's changed
+      if changed
+        @image.short_url = Image.generate_short_url(@image.url)
+        @image.save!
+      end
+      
       redirect_to images_url 
     else
       render :action => :edit
