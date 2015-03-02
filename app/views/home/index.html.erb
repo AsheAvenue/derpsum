@@ -5,6 +5,11 @@
     <div class="logotype">
         <%= image_tag "logotype.png" %>
     </div>
+    <% if @error %>
+        <div class="error">
+            This user account is not authorized to sign in to Derpsum. Please try again.
+        </div>
+    <% end %>
     <div class="sign-in">
         <%= link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2), class: 'btn' %>
     </div>
