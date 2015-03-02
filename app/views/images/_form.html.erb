@@ -12,7 +12,7 @@
         </div>
     <% end %>
 
-    <% unless @image.new_record? %>
+    <% if @image.url && !@image.url.empty? %>
         <%= image_tag @image.url %>
     <% end %>
     
