@@ -29,7 +29,7 @@ var derpsum = new function() {
         
         $('.share').each(function (k,n) {
             $(this).zclip({
-                path: 'ZeroClipboard.swf',
+                path: '/ZeroClipboard.swf',
                 copy: function() { 
                     
                     // First remove the green checkmark from all other share lines
