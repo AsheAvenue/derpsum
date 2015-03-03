@@ -81,6 +81,12 @@ class ImagesController < ApplicationController
       redirect_to invalid_image_url
     end
   end
+
+  def search
+    @images = Image.search(params[:search_string])
+    @images = @images.page(params[:page])
+    render :index
+  end
   
   
   private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/my',                to: 'images#my',                as: 'my'
   get '/add_from_bookmark', to: 'images#add_from_bookmark', as: 'add_from_bookmark'
   get '/tags/:tag',         to: 'images#index',             as: 'tag'
+  post '/search',           to: 'images#search',            as: 'search_index'
   
   # Bookmarklet
   get 'tools',              to: 'statics#tools',            as: 'tools'

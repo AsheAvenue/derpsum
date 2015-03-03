@@ -7,7 +7,10 @@ class Image < ActiveRecord::Base
   validates :name, :presence => true
   validates :url, :presence => true
   
+  # Scopes
   
+  scope :search,   ->(search_t) { joins(:tags).where("tags.name like ?", "#{search_t}%")}
+
   # Other methods
   
   def img_url
