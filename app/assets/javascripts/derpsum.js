@@ -6,6 +6,7 @@ var derpsum = new function() {
         self.masonry();
         self.bookmarklet();
         self.copyToClipboard();
+        self.toggleGifAndFirstFrame();
     };
     
     this.masonry = function() {
@@ -43,6 +44,24 @@ var derpsum = new function() {
                     $(this).find('.share-button i').removeClass('fa-clipboard').addClass('fa-check-circle').addClass('green');
                 }
             });
+        });
+    };
+    
+    this.toggleGifAndFirstFrame = function() {
+        $('.main-image').on('click', 'img', function() {
+            if($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $(this).attr('src', $(this).data('first-frame'));
+            } else {
+                
+                $('.main-image img').each(function(){
+                    $(this).removeClass('active');
+                    $(this).attr('src', $(this).data('first-frame'));
+                });
+                
+                $(this).addClass('active');
+                $(this).attr('src', $(this).data('url'));
+            }
         });
     };
     

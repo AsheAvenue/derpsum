@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227162533) do
+ActiveRecord::Schema.define(version: 20150303183530) do
 
   create_table "images", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150227162533) do
     t.datetime "updated_at"
     t.string   "short_url"
     t.integer  "user_id"
+    t.string   "first_frame_url"
   end
 
   create_table "taggings", force: true do |t|

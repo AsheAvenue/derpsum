@@ -10,7 +10,13 @@ class ImagesController < ApplicationController
   def create
     @image = current_user.images.new(image_params)
     @image.short_url = Image.generate_short_url(@image.url)
-
+    
+    begin
+      image_path = @image.extract_first_frame
+      @image.first_frame_url = Image.upload_image_to_s3(image_path, "#{Time.now.to_i}.jpg")
+    rescue
+    end
+    
     if @image.save
       flash[:notice] = "Image created."
       redirect_to home_path 

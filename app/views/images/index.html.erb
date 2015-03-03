@@ -20,7 +20,7 @@
             <div class="image">
                 
                 <div class="main-image">
-                    <%= image_tag(image.img_url, alt: image.name, data: { url: image.img_url } ) %>
+                    <%= image_tag(image.first_frame_url, alt: image.name, data: { url: image.img_url, first_frame: image.first_frame_url } ) %>
                 </div>
                 
                 <div class="overlay">
