@@ -75,7 +75,6 @@ class ImagesController < ApplicationController
   end
 
   def invalid_image
-
   end
 
   def add_from_bookmark
@@ -93,7 +92,7 @@ class ImagesController < ApplicationController
     @images = @images.page(params[:page])
     render :index
   end
-  
+
   
   private
   

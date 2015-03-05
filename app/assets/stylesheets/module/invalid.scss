@@ -1,17 +1,14 @@
-.home {
+.invalid {
     margin: 200px auto;
     width: 400px;
     text-align: center;
     
-    .logo {
-        margin-bottom: 20px;
-        img {
-            border-radius: 60px;
-        }
-    }
-    
-    .logotype {
+    .no {
         margin-bottom: 40px;
+        img { 
+            width: 400px; 
+            border-radius: 200px;
+        }
     }
     
     .error {
